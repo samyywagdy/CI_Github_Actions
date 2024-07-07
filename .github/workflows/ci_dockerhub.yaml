@@ -5,7 +5,7 @@ on:
 
 jobs:
   build-and-push:
-    runs-on: ubunto-latest
+    runs-on: ubuntu-latest
 
     steps: 
       - name: checkout code
@@ -25,6 +25,6 @@ jobs:
         run:
           docker built -t ${{ secrets.DOCKERHUB_USERNAME }}/$REPOSITORY:$IMAGE_TAG .
           docker push ${{ secrets.DOCKERHUB_USERNAME }}/$REPOSITORY:$IMAGE_TAG
-          
+
 
 
